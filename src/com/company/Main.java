@@ -168,6 +168,52 @@ public class Main {
         print(7,map.get(3));
     }
 
+    public static void demoSet(){
+        Set<String > strset = new HashSet<String>();
+        for(int i = 0;i < 3; i++)
+        {
+            strset.add(String.valueOf(i));
+            strset.add(String.valueOf(i));
+            strset.add(String.valueOf(i));
+        }
+        print(1,strset);
+
+        strset.remove(String.valueOf(1));
+        print(2,strset);
+        print(3,strset.contains(String.valueOf(1)));
+        print(4, strset.isEmpty());
+        print(5,strset.size());
+
+        strset.addAll(Arrays.asList(new String[]{"A","B","C"}));
+        print(6,strset);
+        for(String value:strset)
+        {
+            print(7,value);
+        }
+    }
+
+    public static void demoException(){
+        try{
+            //XXXXX
+            int k = 2;
+            if( k == 2){
+                throw new Exception("故意的!");
+            }
+        }catch(Exception e){
+            print(2,e.getMessage());
+        }finally{
+            print(3,"finally");
+        }
+    }
+
+    public static void demoOOP(){
+        Animal a = new Animal("Jim",2);
+        a.say();
+
+        Animal human = new Human("lei",12,"China");
+        human.say();
+    }
+
     public static void main(String[] args) {
         /**
          * @param index
@@ -183,8 +229,15 @@ public class Main {
         System.out.println("\n");
         demoList();
         System.out.println("\n");
-        demoMap();
+        /*demoMap();
+        System.out.println("\n");*/
+        demoSet();
         System.out.println("\n");
+        demoException();
+        System.out.println("\n");
+        demoOOP();
+        System.out.println("\n");
+
 
         return;
     }
