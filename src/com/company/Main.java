@@ -1,6 +1,8 @@
 package com.company;
 
-import java.awt.*;
+//import java.awt.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
@@ -21,8 +23,8 @@ public class Main {
         print(6,5<<2);
         print(7,5|2);
         print(8,5^2);
-        print(9,5==2);
-        print(10,5!=2);
+        print(9,5 == 2);
+        print(10,5 != 2);
         print(11,5.0/2);
         print(12,5/2.0);
     }
@@ -214,12 +216,47 @@ public class Main {
         human.say();
     }
 
+    public static void demoFunction(){
+        Random rd = new Random();
+        print(1,rd.nextInt(1000));
+        print(2,rd.nextFloat());
+        System.out.println();
+
+        {
+            Random rd1 = new Random();
+            rd1.setSeed(45);
+            print(3,rd1.nextInt(1000));
+            print(4,rd1.nextFloat());
+            System.out.println();
+        }
+
+        List<Integer> array = Arrays.asList(new Integer[]{12, 32, 34, 47, 85, 36});
+        Collections.shuffle(array);
+        print(5,array);
+
+        Date date = new Date();
+        print(6,date);
+        print(7,date.getTime());
+
+        DateFormat df = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+        print(8,df);
+
+        print(9,Math.log(5));
+        print(10,Math.sqrt(6));
+        print(11,Math.ceil(4.3));
+        print(12,Math.floor(4.3));
+        print(13,Math.exp(6));
+        print(14,Math.abs(-12));
+        print(15,Math.max(13,93));
+        print(16,Math.min(102909023,546545678));
+    }
+
     public static void main(String[] args) {
         /**
          * @param index
          * @param object
          */
-        // write your code here
+        /* write your code here
         //print(1, "hello world!");
         demoOperation();
         System.out.println("\n");
@@ -231,11 +268,13 @@ public class Main {
         System.out.println("\n");
         /*demoMap();
         System.out.println("\n");*/
-        demoSet();
+        /*demoSet();
         System.out.println("\n");
         demoException();
         System.out.println("\n");
         demoOOP();
+        System.out.println("\n");*/
+        demoFunction();
         System.out.println("\n");
 
 
